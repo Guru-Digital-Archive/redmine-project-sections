@@ -12,7 +12,7 @@ module SectionProjectPatch
             validate :validate_section_change
 
             after_save :update_or_restore_section
-            after_move :update_descendants
+            # after_move :update_descendants
 
             if Rails::VERSION::MAJOR < 3
                 named_scope :unsectioned, { :conditions => { :section_id => nil } }
